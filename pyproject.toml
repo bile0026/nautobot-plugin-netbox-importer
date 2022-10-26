@@ -25,6 +25,7 @@ tqdm = "^4.59.0"
 colorama = "^0.4.4"
 Markdown = "!=3.3.5"
 nautobot = "*"
+pynetbox = "^6.6.2"
 
 [tool.poetry.dev-dependencies]
 invoke = "*"
