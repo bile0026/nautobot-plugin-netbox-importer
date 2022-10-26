@@ -8,7 +8,7 @@ from packaging import version
 from django.core.management.base import BaseCommand, CommandError
 
 from nautobot_netbox_importer.diffsync.adapters import netbox_adapters, NautobotDiffSync
-from nautobot_netbox_importer.utils import ProgressBar
+from nautobot_netbox_importer.utils.base import ProgressBar
 from nautobot_netbox_importer.command_utils import validate_netbox_version, enable_logging, initialize_logger
 
 

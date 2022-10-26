@@ -10,7 +10,7 @@ from django.contrib.contenttypes.models import ContentType
 
 from nautobot.extras.models import ObjectChange
 
-from nautobot_netbox_importer.utils import ProgressBar
+from nautobot_netbox_importer.utils.base import ProgressBar
 from nautobot_netbox_importer.command_utils import validate_netbox_version, initialize_logger
 from nautobot_netbox_importer.diffsync.models.validation import netbox_pk_to_nautobot_pk
 

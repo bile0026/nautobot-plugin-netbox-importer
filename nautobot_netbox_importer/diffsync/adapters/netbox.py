@@ -8,7 +8,7 @@ import structlog
 
 from nautobot_netbox_importer.diffsync.models.abstract import NautobotBaseModel
 from nautobot_netbox_importer.diffsync.models.validation import netbox_pk_to_nautobot_pk
-from nautobot_netbox_importer.utils import ProgressBar
+from nautobot_netbox_importer.utils.base import ProgressBar
 from .abstract import N2NDiffSync
 
 
@@ -152,3 +152,34 @@ class NetBox210DiffSync(N2NDiffSync):
         self.logger.info("Data loading from NetBox source data complete.")
         # Discard the source data to free up memory
         self.source_data = None
+
+
+class NetBox30DiffSync(N2NDiffSync):
+    """DiffSync adapter for working with data from NetBox 3.0.X."""
+
+    logger = structlog.get_logger()
+
+    def __init__(self, *args, source_data=None, **kwargs):
+        """Store the provided source_data for use when load() is called later."""
+        self.source_data = source_data
+        super().__init__(*args, **kwargs)
+
+class NetBox31DiffSync(N2NDiffSync):
+    """DiffSync adapter for working with data from NetBox 3.1.X."""
+
+    logger = structlog.get_logger()
+
+    def __init__(self, *args, source_data=None, **kwargs):
+        """Store the provided source_data for use when load() is called later."""
+        self.source_data = source_data
+        super().__init__(*args, **kwargs)
+
+class NetBox32DiffSync(N2NDiffSync):
+    """DiffSync adapter for working with data from NetBox 3.2.X."""
+
+    logger = structlog.get_logger()
+
+    def __init__(self, *args, source_data=None, **kwargs):
+        """Store the provided source_data for use when load() is called later."""
+        self.source_data = source_data
+        super().__init__(*args, **kwargs)

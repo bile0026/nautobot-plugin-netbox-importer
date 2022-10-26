@@ -27,3 +27,4 @@ class ProgressBar(tqdm):
             self.set_description(stage)
             self.reset(total=total)
         return self.update(current - self.n)
+

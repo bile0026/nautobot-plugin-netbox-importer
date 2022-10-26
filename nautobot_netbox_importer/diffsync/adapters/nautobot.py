@@ -8,7 +8,7 @@ from django.db import models
 import structlog
 
 from nautobot_netbox_importer.diffsync.models.abstract import NautobotBaseModel
-from nautobot_netbox_importer.utils import ProgressBar
+from nautobot_netbox_importer.utils.base import ProgressBar
 from .abstract import N2NDiffSync
 
 
